@@ -8,7 +8,27 @@
 	propose = town propose
 	sync = town sync
 [git-town]
+	main-branch = main
+	github-connector = api
+	auto-sync = true
+	detached = false
+	ignore-uncommitted = true
+	new-branch-type = feature
+	order = asc
 	proposal-breadcrumb = stacks
+	proposal-breadcrumb-direction = down
+	push-branches = true
+	push-hook = true
+	share-new-branches = no
+	ship-delete-tracking-branch = true
+	ship-strategy = api
+	stash = true
+	sync-feature-strategy = merge
+	sync-perennial-strategy = ff-only
+	sync-prototype-strategy = merge
+	sync-tags = true
+	sync-upstream = true
+	unknown-branch-type = feature
 
 [include]
     path = ~/.gitconfig_local
