@@ -1,0 +1,153 @@
+{
+    "claudeCode.preferredLocation": "panel",
+
+    "workbench.colorCustomizations": {
+        "[Dark+]": {
+            "editor.background": "#1d1f21",
+            "sideBar.background": "#1d1f21",
+            "sideBar.border": "#3b3e41",
+            "statusBar.background": "#3b3e41"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Dark+]": {
+            "comments": "#c5c8c86e",
+            "keywords": "#b294bb",
+            "strings": "#b5bd68",
+            "functions": "#8abeb7",
+            "variables": "#c5c8c6",
+            "types": "#8abeb7",
+            "numbers": "#de935f",
+            "textMateRules": [
+                {
+                    "scope": "keyword.operator.logical",
+                    "settings": {
+                        "foreground": "#de935f"
+                    }
+                },
+                {
+                    "scope": "entity.name.type",
+                    "settings": {
+                        "foreground": "#de935f"
+                    }
+                },
+                {
+                    "scope": "entity.name.function",
+                    "settings": {
+                        "foreground": "#8abeb7"
+                    }
+                },
+                {
+                    "scope": "constat.language",
+                    "settings": {
+                        "foreground": "#de935f"
+                    }
+                },
+                {
+                    "scope": "meta.object.member.ts",
+                    "settings": {
+                        "foreground": "#de935f"
+                    }
+                },
+                {
+                    "scope": "support.class",
+                    "settings": {
+                        "foreground": "#8abeb7"
+                    }
+                },
+                {
+                    "scope": [
+                        "keyword.operator.spread.ts",
+                        "punctation.accessor.optional"
+                    ],
+                    "settings": {
+                        "foreground": "#de935f"
+                    }
+                },
+                {
+                    "scope": [
+                        "storage.modifier",
+                        "keyword.operator.new.ts"
+                    ],
+                    "settings": {
+                        "foreground": "#b294bb"
+                    }
+                },
+                {
+                    "scope": "variable.other.constant",
+                    "settings": {
+                        "foreground": "#c5c8c6"
+                    }
+                },
+                {
+                    "scope": "variable.other.enummeber",
+                    "settings": {
+                        "foreground": "#4ba7cb"
+                    }
+                },
+                {
+                    "scope": "meta.object-literal.key.ts",
+                    "settings": {
+                        "foreground": "#c5c8c6"
+                    }
+                },
+                {
+                    "scope": "entity.other.attribute-name",
+                    "settings": {
+                        "foreground": "#c5c8c6"
+                    }
+                },
+                {
+                    "scope": "entity.name.tag",
+                    "settings": {
+                        "foreground": "#8abeb7"
+                    }
+                },
+                {
+                    "scope": "ilvalid.illegal.character-not-allowed-here.html",
+                    "settings": {
+                        "foreground": "#808080"
+                    }
+                },
+                {
+                    "scope": "text.html.derivative",
+                    "settings": {
+                        "foreground": "#c5c8c6ce"
+                    }
+                },
+                {
+                    "scope": "meta.attribute.derivative.vue",
+                    "settings": {
+                        "foreground": "#b294bb"
+                    }
+                },
+                {
+                    "scope": "entity.other.attribute-name.class.css",
+                    "settings": {
+                        "foreground": "#b294bb"
+                    }
+                },
+                {
+                    "scope": "support.type.property-name.css",
+                    "settings": {
+                        "foreground": "#c5c8c6"
+                    }
+                }
+            ]
+        }
+    },
+    "workbench.colorTheme": "Dark+",
+    "editor.bracketPairColorization.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontSize": 14,
+    "window.zoomLevel": 1,
+    "git.openRepositoryInParentFolders": "always",
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
+}

@@ -1,0 +1,40 @@
+# Dotbot documentation: https://github.com/anishathalye/dotbot
+# Tutorial: https://www.elliotdenolf.com/blog/bootstrap-your-dotfiles-with-dotbot
+# To run: `./install`
+
+# ============== Config ==============
+
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+# install.conf.yaml
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    # Shell
+    ~/.oh-my-zsh/custom/aliases.zsh: config/shell/.aliases.zsh
+    ~/.oh-my-zsh/custom/functions.zsh: config/shell/.functions.zsh
+    ~/.zshrc: config/shell/.zshrc
+    # Terminal
+    ~/com.googlecode.iterm2.plist: config/terminal/com.googlecode.iterm2.plist
+    # Git
+    ~/.gitconfig: config/git/.gitconfig
+    # Tasks ZSH plugin
+    ~/.taskrc: config/task/.taskrc
+    # ============== Apps ==============
+    # VS Code
+    ~/Library/Application Support/Code/User/settings.json: config/vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: config/vscode/keybindings.json
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - command: cat config/vscode/extensions.txt | xargs -L 1 code --install-extension
+      description: Installing VS Code extensions
+      stdin: true

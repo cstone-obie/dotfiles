@@ -1,0 +1,14 @@
+[core]
+	editor = code --wait
+[alias]
+	append = town append
+	diff-parent = town diff-parent
+	hack = town hack
+	prepend = town prepend
+	propose = town propose
+	sync = town sync
+[git-town]
+	proposal-breadcrumb = stacks
+
+[include]
+    path = ~/.gitconfig_local
