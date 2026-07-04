@@ -38,4 +38,3 @@
     - command: cat config/vscode/extensions.txt | xargs -L 1 code --install-extension
       description: Installing VS Code extensions
       stdin: true
-    - command: echo "Run the following to set up Git Town's branch prefix if you haven't yet: \n git config --global git-town.branch-prefix <PREFIX>/"

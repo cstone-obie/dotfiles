@@ -1,4 +1,5 @@
 # Desccription
+
 My dotfiles and settings. For more info, see:
 
 - [Dotbot documentation](https://github.com/anishathalye/dotbot)
@@ -12,10 +13,12 @@ cd dotfiles && ./install
 
 ## Further configuration
 
-### ZSH 
+### ZSH
+
 ZSH aliases can be overridden in the `$ZSH_CUSTOM/work_env` directory. This can include things like an `aliases.zsh` and a `functions.zsh` file.
 
 ### Git
+
 Run the following to make a local Git config file:
 
 ```sh
@@ -30,3 +33,10 @@ Include a user section:
     email = <EMAIL>
 ```
 
+### Git Town
+
+Set up a branch prefix for convenience:
+
+```sh
+git config --global git-town.branch-prefix <PREFIX>/
+```
