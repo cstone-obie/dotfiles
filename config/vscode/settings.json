@@ -149,5 +149,6 @@
     "editor.fontSize": 14,
     "window.zoomLevel": 1,
     "git.openRepositoryInParentFolders": "always",
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.startupEditor": "none"
 }

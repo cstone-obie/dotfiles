@@ -2,8 +2,16 @@ version: 3
 # This section below comes from a separate config file that isn't committed
 # agent:
 #   authtoken: HIDDEN
+
 endpoints:
-  - name: surefin_local_carson
-    url: https://shown-engaging-tackiness.ngrok-free.dev
+  - name: proxy_gateway
     upstream:
-      url: 3333
+      url: http://localhost:8080
+    # traffic_policy:
+    #   on_http_request:
+    #     # Prompt for username and password
+    #     - actions:
+    #         - type: basic-auth
+    #           config:
+    #             credentials:
+    #               - carson:password

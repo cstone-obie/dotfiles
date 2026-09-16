@@ -135,3 +135,8 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+# devwin types a command into the prompt without running it.
+if [[ -n "$DEV_PREFILL" ]]; then
+  print -z "$DEV_PREFILL"
+  unset DEV_PREFILL
+fi

@@ -9,5 +9,15 @@
         "key": "shift+alt+f12",
         "command": "-references-view.findReferences",
         "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+cmd+i",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
     }
 ]

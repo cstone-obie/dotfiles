@@ -1,0 +1,8 @@
+{
+  "enabledPlugins": {
+    "figma@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen",
+  "theme": "light"
+}
