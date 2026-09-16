@@ -1,4 +1,4 @@
-# Desccription
+# Description
 
 My dotfiles and settings. For more info, see:
 
