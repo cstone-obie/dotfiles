@@ -33,19 +33,44 @@ a PR opened with `git town propose` and merged by the user.
   git branch --show-current                                       # not <main>, not HEAD
   git config --get "branch.$(git branch --show-current).merge"    # not refs/heads/<main>
   ```
-- Prefer letting `git town sync` push — it pushes the current branch to its own
-  remote branch and never to `<main>`.
+- `git town sync` pushes the current branch to its own remote branch and never
+  to `<main>` — but see "Pushing is the user's call" below before running it
+  without `--no-push`.
 - Merging a PR is the user's decision. Don't merge, and don't run `git town ship`.
 - **Open PRs with `git town propose`, never the GitHub CLI.** No `gh pr create`,
-  no `gh` anything. Git Town talks to GitHub through its own API connector
-  (`git-town.github-connector = api`), so the CLI is not needed and is not
-  installed.
+  no `gh` anything. `git town propose` opens a prefilled compare page in the
+  browser (see "Opening PRs"), so the CLI is not needed and is not installed.
 
 `gh` is especially unsafe here: it is aliased to `git town hack`. In an
 interactive shell `gh pr create` expands to `git town hack pr create`, which
 **creates a branch** instead of opening a PR — a wrong action that succeeds,
 not an error you would notice. In a non-interactive shell the alias does not
 exist and there is no binary, so it just fails.
+
+## Pushing is the user's call
+
+Commit freely. **Do not push unless the user asks**, on any branch, not just
+`<main>`. Finish the work, commit it, and say the branch is ready to push.
+
+This covers commands that push as a side effect. `git town sync` pushes by
+default, so when syncing is only needed to move between branches or to pick up
+a parent's commits, use:
+
+```bash
+git town sync --no-push
+```
+
+Verified present in Git Town 22.7.1. Whenever a command offers a local-only
+option, take it.
+
+Why it matters: a push is visible to everyone watching the branch and updates
+any open PR immediately. Unpushed commits stay the user's to reshape; pushed
+ones are a decision already made on their behalf.
+
+The exception is a request to open a PR. That authorises the whole sequence —
+`git town sync` (pushing) and then `git town propose` — because a proposal needs
+the branch, and its stack below it, on the remote. No need to ask again for that
+push. Everything outside opening a PR still waits.
 
 ## Rule 1: `<main>` must not be checked out in any worktree
 
@@ -143,7 +168,8 @@ git town prepend <name>   # parent -> new -> current  (inserts above current)
 ```
 
 `git town sync` from anywhere in the stack works bottom-up, merging each parent
-into its child and pushing each one.
+into its child and pushing each one — add `--no-push` to keep it local, which is
+the default choice unless the user asked for a push.
 
 ### Merge order: always bottom-up
 
@@ -232,6 +258,12 @@ merging is the user's call.
 
 `git town propose` is the only way to open a PR here — see Rule 0 for why the
 GitHub CLI is both unnecessary and actively unsafe.
+
+Pass `--title` and `--body-file`. Expect it to print `connector cannot search
+proposals` and open GitHub's compare page with both filled in; the user clicks
+Create. That is the intended result, not a failure — don't suggest fixing the
+token or another way to create the PR. Keep the body file in case the URL
+prefill is cut off.
 
 ## Cleaning up a finished worktree
 

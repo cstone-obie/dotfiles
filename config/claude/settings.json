@@ -4,5 +4,6 @@
   },
   "effortLevel": "high",
   "tui": "fullscreen",
-  "theme": "light"
+  "theme": "light",
+  "agentPushNotifEnabled": true
 }

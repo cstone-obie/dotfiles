@@ -14,6 +14,11 @@ especially. Don't assume familiarity; explain the idea simply, and show a small
 concrete example instead of describing it abstractly. A two-line before/after or
 a sample command teaches me more than a paragraph.
 
+**Lead with the example, don't append it.** Show the worked case first with real
+numbers or real values, then say what it means. If I tell you I don't understand
+something, the fix is a concrete example, not the same explanation reworded or
+expanded. Compare two cases side by side when the point is a difference.
+
 **No jargon standing in for an explanation.** Phrases to avoid:
 
 - "belt and braces" / "belt and suspenders"
@@ -64,6 +69,19 @@ first set tells me what I can already read.
 Also: a stale comment is worse than no comment. If you change code that a
 comment describes, update or delete the comment in the same edit.
 
+## Code design
+
+Whenever you write or review code, follow
+`~/.claude/skills/project-kickoff/design-principles.md`: simple over clever,
+one job per function or module, low coupling, clear business names, tests
+first, strict TypeScript types, and built so a likely next change doesn't
+force a rewrite.
+
+Apply them to the code around the change too, and leave it better than you
+found it. Small fixes in the files you're changing (a missing test, a bad name,
+an obvious bug) go in with the change. For anything bigger or off-task, propose
+a ticket instead of doing it.
+
 ## Explain the why, not just the what
 
 Tell me what breaks if I don't do it. If you found the reason by testing, say
@@ -83,3 +101,20 @@ part. Don't call work done when it isn't.
 ## Corrections
 
 Make the change and move on. No apologies, no recapping the mistake.
+
+## PR titles
+
+This overrides any repo's own title rule, including the `pr` skill in
+risk-management. Format:
+
+```
+type(scope, scope): [BLD-1234] short change description
+```
+
+- `type` is the kind of change, usually one of `feat`, `bug`, `db`,
+  `optimization`, `refactor`, `cleanup`.
+- The scopes are the apps or packages the diff touches, by folder name:
+  `api`, `web-client`, `fortify`, `shared`, `rules-engine`, and so on.
+- Drop `[BLD-1234]` when there is no ticket.
+
+Example: `bug(web-client): [BLD-9229] Send policy edit alarm answers as booleans`

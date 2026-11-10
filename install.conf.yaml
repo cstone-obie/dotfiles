@@ -8,7 +8,7 @@
     link:
       relink: true
 
-- clean: ["~", "~/.claude/skills"]
+- clean: ["~", "~/.claude/skills", "~/.claude/agents"]
 
 - link:
     # Shell
@@ -36,6 +36,18 @@
       create: true
     ~/.claude/skills/project-kickoff:
       path: config/claude/skills/project-kickoff
+      create: true
+    ~/.claude/agents/researcher.md:
+      path: config/claude/agents/researcher.md
+      create: true
+    ~/.claude/agents/reviewer.md:
+      path: config/claude/agents/reviewer.md
+      create: true
+    ~/.claude/agents/sentry-investigator.md:
+      path: config/claude/agents/sentry-investigator.md
+      create: true
+    ~/.claude/agents/tester.md:
+      path: config/claude/agents/tester.md
       create: true
     # ngrok
     ~/Library/Application Support/ngrok/ngrok.yml: config/ngrok/config.yaml

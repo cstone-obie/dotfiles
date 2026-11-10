@@ -150,5 +150,6 @@
     "window.zoomLevel": 1,
     "git.openRepositoryInParentFolders": "always",
     "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "diffEditor.ignoreTrimWhitespace": false
 }
